@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://db7lmagad2evq"]
+
+[ext_resource type="PackedScene" uid="uid://cdfcg8bi1ocun" path="res://Scenes/player.tscn" id="1_uwtpp"]
+
+[sub_resource type="TileSet" id="TileSet_hk0uh"]
+tile_size = Vector2i(40, 40)
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_uwtpp")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_hk0uh")
+format = 2
+layer_0/name = "Layer1 (ground)"
+layer_0/z_index = -2
+layer_1/name = "Layer2 (cheats, cliffs)"
+layer_1/z_index = -1
+layer_2/name = "Layer3 (trees, houses)"
