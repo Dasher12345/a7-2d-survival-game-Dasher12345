@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ct3eixec0ucyj"]
 
-[ext_resource type="Script" path="res://Scenes/apple_collectable.gd" id="1_6xlqh"]
+[ext_resource type="Script" path="res://Script/apple_collectable.gd" id="1_6xlqh"]
 [ext_resource type="Texture2D" uid="uid://dbauwfxjy2fgv" path="res://Assets/Environment/apple-icon.png" id="1_rm10d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q57tp"]
