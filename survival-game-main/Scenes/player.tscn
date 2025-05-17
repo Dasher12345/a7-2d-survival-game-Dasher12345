@@ -348,6 +348,7 @@ limit_right = 2200
 limit_bottom = 1440
 
 [node name="Inventory_UI" parent="." instance=ExtResource("4_hskyd")]
+z_index = 1
 offset_left = -46.0
 offset_top = -76.0
 offset_right = 46.0
