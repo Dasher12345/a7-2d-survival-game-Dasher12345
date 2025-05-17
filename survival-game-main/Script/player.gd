@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var speed = 100
+var speed = 125
 
 var player_state
 
@@ -58,7 +58,7 @@ func _physics_process(delta: float) -> void:
 func play_anim(direction):
 	
 	if !bow_equiped:
-		speed = 100
+		speed = 125
 		if player_state == "Idle":
 			$AnimatedSprite2D.play("Idle")
 		if player_state == "walking":
