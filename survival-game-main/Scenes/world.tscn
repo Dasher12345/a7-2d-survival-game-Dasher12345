@@ -151,7 +151,8 @@ texture_region_size = Vector2i(40, 40)
 6:0/0 = 0
 7:0/0 = 0
 8:0/0 = 0
-8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.18718, 6.11647, 6.54074, 5.40936, 6.54074, 15.3089, -6.18718, 15.6624)
+8:0/0/y_sort_origin = 12
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.3085, 7.53069, 7.95495, 7.53069, 5.48008, 15.6624, -4.41942, 15.3089)
 9:0/0 = 0
 10:0/0 = 0
 11:0/0 = 0
@@ -161,7 +162,8 @@ texture_region_size = Vector2i(40, 40)
 15:0/0 = 0
 16:0/0 = 0
 17:0/0 = 0
-17:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.18718, 6.11647, 6.54074, 5.40936, 6.54074, 15.3089, -6.18718, 15.6624)
+17:0/0/y_sort_origin = 12
+17:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.3085, 7.53069, 7.95495, 7.53069, 5.48008, 15.6624, -4.41942, 15.3089)
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -170,7 +172,9 @@ texture_region_size = Vector2i(40, 40)
 5:1/0 = 0
 6:1/0 = 0
 7:1/0 = 0
+7:1/0/y_sort_origin = 7
 8:1/0 = 0
+8:1/0/y_sort_origin = 12
 8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11.4905, 4.70226, 2.2981, 5.05581, 0.883884, 12.1269, -9.01561, 12.1269)
 9:1/0 = 0
 10:1/0 = 0
@@ -181,6 +185,7 @@ texture_region_size = Vector2i(40, 40)
 15:1/0 = 0
 16:1/0 = 0
 17:1/0 = 0
+17:1/0/y_sort_origin = 12
 17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11.4905, 4.70226, 2.2981, 5.05581, 0.883884, 12.1269, -9.01561, 12.1269)
 0:2/0 = 0
 1:2/0 = 0
@@ -191,6 +196,7 @@ texture_region_size = Vector2i(40, 40)
 6:2/0 = 0
 7:2/0 = 0
 8:2/0 = 0
+8:2/0/y_sort_origin = 12
 8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.65165, 8.59134, 12.1976, 8.59134, 10.7834, 16.3695, 0.530331, 15.3089)
 9:2/0 = 0
 10:2/0 = 0
@@ -201,6 +207,7 @@ texture_region_size = Vector2i(40, 40)
 15:2/0 = 0
 16:2/0 = 0
 17:2/0 = 0
+17:2/0/y_sort_origin = 12
 17:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.65165, 8.59134, 12.1976, 8.59134, 10.7834, 16.3695, 0.530331, 15.3089)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ba3xq"]
@@ -265,6 +272,7 @@ sources/2 = SubResource("TileSetAtlasSource_vcpr2")
 sources/3 = SubResource("TileSetAtlasSource_ba3xq")
 
 [node name="World" type="Node2D"]
+y_sort_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -296,7 +304,6 @@ position = Vector2(48, 61)
 position = Vector2(134, -18)
 
 [node name="Player" parent="." instance=ExtResource("1_uwtpp")]
-z_index = 3
 
 [node name="collisions" type="StaticBody2D" parent="."]
 
