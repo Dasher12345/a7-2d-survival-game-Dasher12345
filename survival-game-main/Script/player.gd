@@ -20,10 +20,10 @@ var second = 0
 func _physics_process(delta: float) -> void:
 	mouse_location_from_player = get_global_mouse_position() - self.position
 	
-	second += delta
-	if second > 1:
-		print(mouse_location_from_player)
-		second = 0
+	#second += delta
+	#if second > 1:
+		#print(mouses_location_from_player)
+		#second = 0
 	
 	var direction = Input.get_vector("left", "right", "up", "down")
 	
