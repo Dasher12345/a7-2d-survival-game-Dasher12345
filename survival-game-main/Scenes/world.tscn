@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://db7lmagad2evq"]
+[gd_scene load_steps=15 format=3 uid="uid://db7lmagad2evq"]
 
 [ext_resource type="PackedScene" uid="uid://cdfcg8bi1ocun" path="res://Scenes/player.tscn" id="1_uwtpp"]
 [ext_resource type="Texture2D" uid="uid://be3dk70cqs7t1" path="res://Assets/Environment/survivalgame-terrian-defult.png" id="2_f3ge7"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://cf203bgy6v4tk" path="res://Scenes/stick_collectable.tscn" id="6_g5day"]
 [ext_resource type="PackedScene" uid="uid://7b8n2er0sfwb" path="res://Scenes/apple_tree.tscn" id="6_rskfw"]
 [ext_resource type="PackedScene" uid="uid://bvhahpxgoj72q" path="res://Scenes/slime.tscn" id="8_yj7a1"]
+[ext_resource type="PackedScene" uid="uid://bobw7lvo3mcnh" path="res://Scenes/world_2.tscn" id="9_ln8ju"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ijt5s"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gf550"]
 texture = ExtResource("2_f3ge7")
 texture_region_size = Vector2i(40, 40)
 0:0/0 = 0
@@ -94,7 +95,7 @@ texture_region_size = Vector2i(40, 40)
 17:3/0 = 0
 18:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7bvcm"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7b45e"]
 texture = ExtResource("3_pa1dm")
 texture_region_size = Vector2i(40, 40)
 0:0/0 = 0
@@ -140,7 +141,7 @@ texture_region_size = Vector2i(40, 40)
 15:2/0 = 0
 17:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcpr2"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2gmaj"]
 texture = ExtResource("4_7lyef")
 texture_region_size = Vector2i(40, 40)
 0:0/0 = 0
@@ -211,7 +212,7 @@ texture_region_size = Vector2i(40, 40)
 17:2/0/y_sort_origin = 12
 17:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.65165, 8.59134, 12.1976, 8.59134, 10.7834, 16.3695, 0.530331, 15.3089)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ba3xq"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j4mtu"]
 texture = ExtResource("5_amwmw")
 texture_region_size = Vector2i(40, 40)
 0:0/0 = 0
@@ -267,10 +268,10 @@ texture_region_size = Vector2i(40, 40)
 [sub_resource type="TileSet" id="TileSet_hk0uh"]
 tile_size = Vector2i(40, 40)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_ijt5s")
-sources/1 = SubResource("TileSetAtlasSource_7bvcm")
-sources/2 = SubResource("TileSetAtlasSource_vcpr2")
-sources/3 = SubResource("TileSetAtlasSource_ba3xq")
+sources/0 = SubResource("TileSetAtlasSource_gf550")
+sources/1 = SubResource("TileSetAtlasSource_7b45e")
+sources/2 = SubResource("TileSetAtlasSource_2gmaj")
+sources/3 = SubResource("TileSetAtlasSource_j4mtu")
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -309,10 +310,12 @@ position = Vector2(134, -18)
 [node name="collisions" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
-polygon = PackedVector2Array(83, -165, 178, -165, 185, -177, 186, -440, 243, -440, 244, -226, 262, -205, 418, -205, 436, -220, 436, -242, 680, -241, 680, 2, 680, 294, 89, 294, 89, 441, -87, 440, -86, 371, -680, 375, -679, -207, -105, -204, -105, -165, 35, -166, 39, -170, 40, -200, -82, -199, -84, -230, -99, -240, -642, -239, -645, -441, -545, -441, -546, -336, -536, -325, -302, -325, -294, -335, -294, -405, -265, -405, -266, -295, -258, -283, -102, -284, -94, -295, -94, -442, -72, -442, -71, -284, -54, -283, -47, -295, -33, -295, -26, -282, -14, -285, -7, -294, 10, -295, 15, -284, 27, -285, 35, -295, 49, -295, 54, -285, 67, -285, 74, -295, 89, -295, 96, -285, 107, -284, 115, -296, 127, -295, 135, -285, 151, -285, 154, -441, 165, -441, 163, -200, 82, -197, 169, -197, 168, -549, -806, -522, -917, -309, -945, -48, -962, 286, -868, 518, -706, 609, -397, 635, 131, 659, 878, 588, 1191, 279, 1140, -88, 1036, -545, 787, -592, 337, -602, 215, -582, 172, -452, 171, -195, 82, -194)
+polygon = PackedVector2Array(81, -167, 184, -167, 185, -439, 246, -439, 246, -222, 262, -204, 417, -205, 436, -222, 436, -242, 679, -243, 680, 298, 92, 294, 90, 714, 107, 714, 114, 702, 128, 702, 135, 713, 146, 714, 154, 704, 167, 704, 175, 715, 188, 714, 195, 703, 209, 704, 214, 715, 226, 715, 234, 705, 248, 705, 257, 717, 267, 717, 274, 705, 288, 705, 294, 716, 306, 716, 313, 705, 329, 705, 334, 716, 346, 716, 353, 706, 370, 706, 375, 715, 386, 715, 393, 705, 407, 705, 415, 715, 426, 715, 433, 704, 448, 704, 455, 715, 465, 715, 473, 704, 488, 704, 496, 715, 505, 715, 514, 705, 528, 705, 535, 715, 545, 715, 552, 705, 569, 705, 575, 715, 586, 715, 594, 704, 607, 704, 615, 716, 627, 716, 633, 705, 649, 705, 655, 715, 664, 715, 673, 705, 681, 705, 680, 921, 623, 923, 604, 937, 604, 960, 598, 963, 580, 964, 565, 980, 566, 1160, 553, 1160, 553, 1094, 152, 1097, 153, 896, -303, 896, -347, 919, -348, 938, -680, 937, -680, 705, -671, 705, -665, 715, -655, 715, -648, 704, -632, 704, -625, 716, -614, 716, -607, 705, -592, 705, -585, 714, -575, 714, -566, 703, -553, 704, -545, 716, -535, 716, -526, 704, -511, 705, -504, 716, -495, 716, -487, 705, -471, 705, -465, 715, -455, 715, -447, 706, -432, 706, -425, 716, -413, 716, -405, 704, -392, 706, -384, 716, -375, 716, -367, 705, -352, 705, -346, 715, -334, 715, -327, 704, -312, 704, -304, 715, -296, 715, -286, 704, -272, 705, -265, 715, -255, 715, -248, 706, -231, 706, -226, 715, -214, 715, -208, 706, -191, 706, -184, 715, -174, 715, -168, 706, -151, 706, -146, 716, -134, 715, -128, 706, -112, 706, -104, 716, -95, 716, -88, 706, -73, 706, -63, 716, -55, 716, -47, 706, -33, 706, -24, 715, -13, 715, -9, 616, -50, 618, -51, 536, -90, 537, -90, 372, -680, 372, -679, -441, -664, -440, -665, -217, -656, -204, -104, -206, -104, -170, -97, -165, 39, -166, 40, -198, -83, -200, -84, -229, -98, -240, -640, -239, -645, -250, -646, -440, -544, -440, -545, -338, -537, -325, -303, -325, -294, -336, -295, -405, -264, -405, -265, -296, -257, -285, -101, -285, -94, -296, -95, -440, -71, -440, -70, -284, -54, -285, -47, -297, -33, -296, -26, -285, -14, -284, -6, -296, 8, -296, 16, -285, 25, -285, 33, -297, 48, -296, 55, -285, 67, -285, 74, -296, 89, -296, 94, -285, 106, -285, 112, -296, 129, -296, 135, -284, 147, -284, 151, -294, 151, -440, 168, -440, 167, -197, 83, -196, 171, -194, 172, -494, -106, -595, -451, -607, -865, -505, -933, -191, -963, 58, -984, 457, -808, 469, -644, 488, -338, 471, -174, 513, -169, 584, -418, 632, -624, 624, -890, 624, -867, 748, -876, 887, -876, 980, -664, 1031, -446, 1003, -251, 983, -61, 988, 49, 1014, 63, 1093, 63, 1138, 295, 1184, 459, 1184, 527, 1223, 663, 1223, 751, 1175, 753, 994, 753, 872, 745, 677, 680, 638, 516, 632, 270, 607, 151, 516, 159, 403, 247, 363, 397, 363, 550, 363, 705, 363, 782, 363, 799, 112, 799, -115, 824, -338, 759, -584, 570, -621, 236, -550, 180, -465, 175, -191, 81, -192)
 
 [node name="slime" parent="." instance=ExtResource("8_yj7a1")]
 position = Vector2(399, 202)
 
 [node name="slime2" parent="." instance=ExtResource("8_yj7a1")]
 position = Vector2(158, -94)
+
+[node name="world2" parent="." instance=ExtResource("9_ln8ju")]

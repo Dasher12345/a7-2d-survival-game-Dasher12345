@@ -13,6 +13,10 @@ var arrow = preload("res://Scenes/arrow.tscn")
 var mouse_location_from_player = null
 var second = 0
 
+
+@onready var camera = $Camera2D
+
+
 func _physics_process(delta: float) -> void:
 	mouse_location_from_player = get_global_mouse_position() - self.position
 	
